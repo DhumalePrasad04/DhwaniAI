@@ -9,8 +9,12 @@ from pyngrok import ngrok
 import time
 
 # Twilio Credentials (Replace with your Twilio details)
-TWILIO_ACCOUNT_SID = "AC8c63cc6eb8a765630de0a185ad289f7b"
-TWILIO_AUTH_TOKEN = "2b934e4dd3d410ef7702d4f88ac3f832"
+import os
+from dotenv import load_dotenv
+load_dotenv()  # Load variables from .env
+TWILIO_ACCOUNT_SID = os.getenv("sid")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+
 
 # Flask App
 app = Flask(__name__)
